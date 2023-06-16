@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Program</title>
+
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function nameinsert(){
+            var name = document.getElementById('name').value;
+            var value = document.getElementById('value').innerHTML = name
+        }
+        
+        function totalprice(){
+            var price = document.getElementById('price').textContent;
+            var qty = document.getElementById('qty').value;
+            var total = document.getElementById('total').innerHTML = price * qty
+        }
+        /*
+        $(document).ready(function(){ 
+            
+            $('#button').click(function(){
+                var name = $('#name').val()
+                $('#value').html(name)
+            });
+        });*/
+    </script>
+    <div>
+        <input type="text" id="name">
+        <button id="button" onclick="nameinsert()">Print It</button>
+        <p id="value"></p>
+
+
+        <input type="number" id="qty" min="1" max="5" onchange="totalprice()">
+        <div id="price">499</div>
+        <button id="buybutton"></button>
+        <div id="total"></div>
+    </div>
+</body>
+</html>
