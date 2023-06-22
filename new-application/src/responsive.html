@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="https://kit.fontawesome.com/e9b0afef5d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
-    <title>Google</title>
+    <title>Responsive Google</title>
 
     <style>
 
@@ -285,7 +285,89 @@
             padding-left: 50px;
         }
 
+        @media only screen and (max-width: 768px) {
 
+            nav{
+                float: right;
+            }
+
+            nav #bars {
+                padding-top: 10px;
+                padding-left: 12px;
+                color: rgba(0,0,0,0.5);
+                font-size: 11px;
+            }
+
+            nav #icon {
+                padding-top: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            nav #profile {
+                padding-left: 6px;
+                padding-right: 68px;
+            }
+
+
+            main div img {
+                background-color: transparent;
+                background-color: azure;
+                width: 160px;
+                height: 57px;
+                margin-top: 40px;
+                margin-left: 23%;
+            }
+
+            #searchbar {
+                display: flex;
+                margin-top: 2%;
+                margin-left: 12%;
+                margin-right: auto;
+                width: 500px;
+                        
+            }
+
+            #search {
+                border-radius: 23px 0px 0px 23px;
+                border: 1px solid whitesmoke;
+                background-color: white;
+                border-right: none;
+                padding-top: 2px;
+                width: 8%;
+                height: 33px;
+            }
+
+            #searchbar input {
+                width: 160px;
+                height: 29px;
+                border: 1px solid whitesmoke;
+                border-left: none;
+                border-right: none;
+                outline: none;
+            }
+
+            #down #button1 {
+                font-size: 10.5px;
+                width: 90px;
+                height: 30px;
+                background-color: whitesmoke;
+                border: transparent;
+                margin: 6px;
+                margin-left: 20%;
+                border-radius: 5px;
+            }
+
+            #down #button2 {
+                font-size: 10.5px;
+                width: 90px;
+                height: 30px;
+                background-color: whitesmoke;
+                border: transparent;
+                margin: 6px;
+                border-radius: 3px;
+            }
+        }
         
     </style>
 </head>
