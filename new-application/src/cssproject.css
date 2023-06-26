@@ -1,0 +1,155 @@
+body{
+    background-color: white;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    width: 100vw;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+
+ul{
+    display: flex;
+    margin-top: 12px;
+}
+
+li{
+    display: flex;
+    margin: 5px;
+    
+}
+
+div img{
+    margin-top: 10px;
+    margin-left: 6px;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+
+li ul{
+    display: none;
+}
+
+ul li:hover ul{
+    display: grid;
+}
+
+
+ul li button{
+    background-color: rgb(114, 225, 54);
+    color: white;
+    border-radius: 3px;
+    border: transparent;
+    margin-right: 10px;
+}
+
+#sidecontent{
+    margin-top: 5.3%;
+    background-image: url('https://edyoda.s3.ap-south-1.amazonaws.com/public/landing-background.png');
+    background-size: cover;
+    width: 100vw;
+    height: 600px;
+    position: relative;
+    text-align: center;
+    z-index: -1;
+}
+
+
+#sidecontent h1{
+    padding-top: 130px;
+}
+
+
+.subcontent .item:first-of-type{
+    background-color: #5acda6;
+    width: 25vw;
+    height: 450px;
+}
+
+.subcontent .item:nth-of-type(2){
+    background-color: #91ac41;
+    width: 25vw;
+    height: 450px;
+}
+
+.subcontent .item:nth-of-type(3){
+    background-color: #e4b476;
+    width: 25vw;
+    height: 450px;
+}
+
+.subcontent .item:last-of-type{
+    background-color: #f69dad;
+    width: 30vw;
+    height: 450px;
+}
+
+.subcontent{
+    display: flex;
+    position: relative;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+
+.subcontent div i{
+    margin-top: 3%;
+    font-size: 96px;
+    color: white;
+}
+
+.subcontent div h2{
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.subcontent div p{
+    font-size: 10.5px;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+}
+
+
+.icon-tag{
+    font-size: 32px;
+}
+
+.content{
+    width: 22vw;
+    display: flex;
+}
+
+#quality{
+    display: flex;
+}
+
+#quality .icon{
+    display: grid;
+    width: 25vw;
+    height: 400px;
+    background-color: #e4b476;
+    text-align: center;
+}
+
+#quality .icon i{
+    font-size: 45px;
+}
+
+@media screen and (max-width:700){
+    
+}

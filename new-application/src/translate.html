@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+
+        body{
+            background-color: black;
+            color: black;
+            animation: colorchange 7s infinite;
+        }
+
+        #sty{
+            text-align: center;
+
+        }
+
+        #circle{
+            position: relative;
+            top: 280px;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            animation: circle 7s infinite;
+            background-color: lightgray;
+        }
+        #circle{
+            align-items: center;
+            justify-items: center;
+        }
+
+
+        @keyframes colorchange {
+            from {background-color: black;color: black;}
+            to {background-color: aliceblue; color:aliceblue;text-align: center;margin-top: 40px;}
+        }
+
+        @keyframes circle{
+        0%{
+            transform:rotate(0deg)
+                    translate(-165px)
+                    rotate(0deg);
+            background-color: aliceblue;
+        
+        }
+
+        25%{
+            transform:rotate(90deg)
+                    translate(-165px)
+                    rotate(90deg);
+            background-color: lightblue;
+        }
+
+        50%{
+            transform:rotate(180deg)
+                    translate(-165px)
+                    rotate(180deg);
+            background-color: lightgreen;
+        }
+        
+        100%{
+            
+            transform:rotate(360deg)
+                    translate(-165px)
+                    rotate(-360deg);
+            background-color: black;
+        }
+        }
+        
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hello! Deepak</h3>
+    <nav>
+        <ul></ul>
+    </nav>
+    <div id="circle"></div>
+</body>
+</html>

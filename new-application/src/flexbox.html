@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+            display: flex;
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            flex-direction: row;
+            /* justify-content: center; */
+            /* justify-content: flex-end; */
+            justify-content: space-between;
+            flex-wrap: wrap;
+            /* align-items: center; */
+            /* align-content: flex-end; */
+
+        }
+
+        .item {
+            width: 100px;
+            height: 45px;
+            background-color: lightcoral;
+            border: 1px solid black;
+            flex-grow: 1;
+            /* flex-basis: 100px; */
+        }
+
+        .item:nth-child(3){
+            background-color: orange;
+            flex-grow: 0;
+            flex-shrink: 3;
+        }
+
+        @media screen and (max-width:600px) {
+            #container{
+                width: 480px;
+                height: 200px;
+                background-color: black;
+                color: aliceblue;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .item{
+                background-color: lightgreen;
+                color: white;
+                border: 3px solid black;
+            }
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+</body>
+</html>
