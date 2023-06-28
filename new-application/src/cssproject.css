@@ -1,3 +1,10 @@
+*{
+    margin: 0%;
+    padding: 0px;
+}
+
+
+
 body{
     background-color: white;
 }
@@ -22,7 +29,7 @@ ul{
 
 li{
     display: flex;
-    margin: 7px;
+    margin-right: 24px;
     
 }
 
@@ -34,11 +41,13 @@ div img{
 li a{
     text-decoration: none;
     color: black;
-    font-size: 16px;
+    font-weight: 2000;
+    font-size: 15px;
 }
 
 li a:hover{
     text-decoration: underline;
+
 }
 
 li button:hover{
@@ -48,30 +57,57 @@ li button:hover{
 
 li ul{
     display: none;
+    margin-top: 2.3%;
+    margin-left: 7%;
 }
 
-ul li:hover ul{
-    display: grid;
+nav ul li ul{
+    position: absolute;
+    top: 5%;
+    display: none;
+    background-color: white;
+    color: black;
+    border-radius: 0px 0px 5px 5px;
+    border: 4px solid rgb(170, 210, 54);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+ nav ul li:hover ul{
+    display: block;
+    margin-left: -4.5%;
+}
+
+nav ul li ul li{
+    line-height: 1;
+    width: 100px;
+    border-radius: 5px;
+    padding: 6px;
+    margin-left: 20px;
 }
 
 
 ul li button{
     background-color: rgb(170, 210, 54);
     color: white;
-    height: 30px;
+    width: 112px;
+    height: 34px;
     font-size: 18px;
     border-radius: 3px;
     border: transparent;
+    margin-top: -4px;
     margin-right: 10px;
     font-size: 13px;
 }
 
 #sidecontent{
-    margin-top: 1%;
+    margin-top: -18%;
     background-image: url('https://edyoda.s3.ap-south-1.amazonaws.com/public/landing-background.png');
-    background-size: cover;
-    width: 100vw;
-    height: 600px;
+    background-size: 1440px  900px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 900px;
     position: relative;
     text-align: center;
     z-index: -1;
@@ -79,45 +115,59 @@ ul li button{
 
 
 #sidecontent h1{
-    padding-top: 130px;
-    font-size: 42px;
-    font-weight: 600;
+        padding-top: 399px;
+        width: 100%;
+        max-width: 1100px;
+        font-size: 44px;
+        font-weight: 600;
+        letter-spacing: 8.8px;
+        line-height: 1.2;
+        text-align: center;
+        margin: 0 auto;
 }
 
 #sidecontent p{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 4%;
     font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
     color: #8b8b99;
+    text-align: center;
 
 }
 
 .subcontent .item:first-of-type{
     background-color: #5acda6;
     width: 25vw;
-    height: 450px;
+    height: 800px;
 }
 
 .subcontent .item:nth-of-type(2){
     background-color: #91ac41;
-    width: 25vw;
-    height: 450px;
+    width: 25%;
+    height: 800px;
 }
 
 .subcontent .item:nth-of-type(3){
     background-color: #e4b476;
-    width: 25vw;
-    height: 450px;
+    width: 25%;
+    height: 800px;
 }
 
 .subcontent .item:last-of-type{
     background-color: #f69dad;
-    width: 30vw;
-    height: 450px;
+    width: 25%;
+    height: 800px;
 }
 
 .subcontent{
     display: flex;
     position: relative;
-    width: 100vw;
+    width: 100%;
+    height: 800px;
     top: 0;
     left: 0;
     right: 0;
@@ -126,7 +176,7 @@ ul li button{
 
 
 .subcontent div i{
-    margin-top: 3%;
+    margin-top: 22%;
     font-size: 96px;
     color: white;
 }
@@ -136,14 +186,17 @@ ul li button{
     font-size: 105px;
 }
 
-.subcontent .item h2{
-    font-weight: 600;
-    font-size: 35px;
+.subcontent .item h1{
+    font-weight: 900;
+    margin-top: 8%;
+    font-size: 25px;
     color: aliceblue;
 }
 
 .subcontent .item p{
-    font-size: 12px;
+    padding-top: 5%;
+    font-size: 15px;
+    font-weight: 300;
     letter-spacing: 0.5px;
     line-height: 1.6;
     color: aliceblue;
@@ -155,12 +208,12 @@ ul li button{
 }
 
 #content{
-    width: 100vw;
+    width: 100%;
     height: 800px;
     text-align: center;
     background-color: #f7eee2;
     position: relative;
-    margin-top: -6%;
+    margin-top: -19%;
     top: 0;
     left: 0;
     right: 0;
@@ -169,6 +222,7 @@ ul li button{
 
 #content-2{
     text-align: center;
+    width: 100%;
 }
 
 #content #first{
@@ -272,6 +326,10 @@ ul li button{
     transition: box-shadow 0.3s;
 }
 
+#customer .user:hover{
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+}
+
 #customer .user:nth-child(2){
     width: 25%;
     height: 300px;
@@ -349,7 +407,7 @@ ul li button{
 
 }
 .left-session{
-    width: 70vw;
+    width: 70%;
     height: 650px;
     margin-left: -2.9%;
 }
@@ -453,9 +511,17 @@ ul li button{
 }
 
 .videoSession #video{
+   margin-top: 2%;
    width: 50%;
    height: 400px;
    margin-left: 25%;
+}
+
+#line-separator{
+    width: 100%;
+    background-color: #57e3b5;
+    display: inline-block;
+    height: 3px;
 }
 
 #form{
@@ -570,15 +636,28 @@ footer{
 }
 
 
-@media screen and (max-width:556px){
+@media screen and (max-width:660px){
+
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
     nav {
-        width: 100%;
-        margin-left: -1%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        width: 100vw;
+        height: 50px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
     }
 
     #sidecontent {
         margin-left: -1%;
-        width: 110vw;
+        width: 100vw;
     }
 
     .subcontent {
@@ -587,18 +666,23 @@ footer{
         text-align: center;
     }
 
+    #sidecontent h1{
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    #sidecontent p{
+        font-size: 2px;
+    }
+
     #content #quality{
-        display: flex;
+        display: grid;
         flex-direction: column;
     }
 
-    
-
-
-
     #content {
         width: 100vw;
-        height: 800px;
+        height: auto;
         text-align: center;
         background-color: #f7eee2;
         position: relative;
@@ -608,24 +692,88 @@ footer{
         right: 0;
     }
 
-    #quality {
-        background-color: #f7eee2;
-    }
-
     #quality .icon {
         width: 25%;
         text-align: center;
         padding: 24px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    #customer .user{
-        height: 300px;
+    #content-2 {
+        text-align: center;
+        width: 100%;
+        position: relative;
+        top: 0;
     }
 
-    #customer .user .desc{
-        font-size: 8px; 
+    #customer {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    #customer .user 
+    #customer .user .desc {
+        font-size: 10px;
+        color: #8b8b99;
+        letter-spacing: 0.7px;
+        font-family: 'Poppins';
+        margin: 0;
+    }
 
+    .right-session h3 {
+        font-size: 25px;
+        font-weight: 1000;
+        padding-top: 22px;
+    }
+
+    .right-session p {
+        font-size: 11px;
+        font-weight: 500;
+        color: #8b8b99;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .right-session input:nth-of-type(2) {
+        width: 60%;
+        height: 50px;
+        margin-left: 22.1%;
+        outline: none;
+        border: none;
+        border-radius: 1px;
+        background-color: #f69dad;
+        color: white;
+    }
+
+    .status h3 {
+        text-align: center;
+        font-size: 35px;
+        font-weight: 700;
+    }
+
+    .status p {
+        color: #57e3b5;
+        font-size: 11px;
+    }
+    
+
+    .right-session {
+        display: flex;
+        flex-direction: column;
+        width: 35vw;
+        height: 650px;
+        margin-left: -3.5%;
+        margin-top: 1.5%;
+        background-image: url(https://edyoda.s3.ap-south-1.amazonaws.com/public/strawberry-white.png);
+        background-size: cover;
+        text-align: center;
+    }
+
+
+
+    
 }
