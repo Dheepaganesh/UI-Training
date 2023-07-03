@@ -122,16 +122,24 @@ for(i in customers_data){
 }
 
 
-// student = { 
-//     name: "David Rayy", 
-//     sclass: "VI", 
-//     rollno: 12 
-// }; 
+ var student = [{ 
+     name: "David Rayy", 
+    sclass: "VI", 
+    rollno: 12 
+},
+{ 
+    name: "User", 
+   sclass: "VI", 
 
-// for(i in student){
-//     lst.push(i)
-// }
-// console.log(lst)
+},
+]; 
+
+for(i in student){
+   
+    student[i]?.rollno && console.log('output',student[i]?.rollno)
+
+}
+
 
 // student =  {  
 //     name : "David Rayy",  
@@ -218,22 +226,238 @@ for(i in customers_data){
 //     }
 // }
 
-var lst=[1, 3, 6, 2, 5, 10]
-var another=lst.slice(4)
-console.log(another)
-var mod_lst=[]
-var value_1=0
-var value_2=0
-for(i in lst.slice(0,4)){
-    value_1+=lst[i]
+// var lst=[1, 3, 6, 2, 5, 10]
+// var another=lst.slice(4)
+// console.log(another)
+// var mod_lst=[]
+// var value_1=0
+// var value_2=0
+// for(i in lst.slice(0,4)){
+//     value_1+=lst[i]
+// }
+// mod_lst.push(value_1)
+// console.log
+// for(i in another){
+//     value_2+=another[i]
+//     console.log(value_2)
+// }
+// mod_lst.push(value_2)
+// console.log(mod_lst)
+
+
+// Arrow Function
+
+// var name_=(a,b)=>console.log(a+b);
+
+// name_(1,5);
+
+
+var person={
+    user:{
+        firstName:'deepak',
+        lastName:'ganesh'
+    },
 }
-mod_lst.push(value_1)
-for(i in another){
-    value_2+=lst[i]
-    console.log(value_2)
+
+
+// console.log(person?.age)
+
+
+
+// console.log('First Name : ' + person.user?.firstName)
+
+
+// arr=[1,3,5,4,2]
+
+/* Add Array using splice
+ arr.splice(2,0,'4','6')
+ */
+
+// Delete Array using splice
+
+// arr.splice(2,2)
+// console.log(arr)
+
+
+// Concat
+// arr1=[7,8,9]
+
+// var new_=arr1.concat(arr)
+// console.log(new_)
+
+// Sort
+
+// var new_=arr.sort()
+// console.log(new_)
+
+// Reverse
+
+// arr = [1,'a',2,'b',3,'c',6,'d',7,'e',8,'f']
+
+//  var new_=arr.reverse()
+//  console.log(new_)
+
+
+// arr1 = [4, 11, 12, 23, 46, 65, 70, 73, 98];  
+// arr2 = [7, 13, 25, 46, 58, 70, 84]; 
+
+// for(i in arr2){
+//     if (arr1[i] in arr2){
+//         console.log('\t Element Found:Yes')
+            //break
+//     }
+// }
+
+// var arr = [4,5,6,7,8]  
+// var arr1 = [3,4,6,6,7,8,9] 
+// var arr2 = [34,23,45,55,67,77]
+
+// function listcheck(lst){
+
+    
+
+//      for(i in lst){
+//         var ind = Number(i)+1
+//         console.log(ind)
+//          var ele = lst[ind]
+//          console.log(ele)
+        
+//          if (ele < lst[i]){
+//              console.log(lst + ' Strictly not increasing sequence')
+//              break
+//          }
+
+//          else if (ele == lst[i]){
+//             console.log(lst + ' Strictly not increasing sequence')
+//             break
+//         }
+//          else{
+
+//             if(Number(i)==lst.length-1){
+//                 console.log(lst + ' Strictly increasing sequence')
+//             }
+//             continue
+
+//          }
+//      }
+
+// }
+
+
+
+
+
+// listcheck(arr)
+// listcheck(arr1)
+// listcheck(arr2)
+
+
+var coins=[25, 10, 5, 2, 1]
+
+
+
+function changegiver(money){
+    change=[]
+    for(i in coins){
+        if(money==0){
+            console.log(change)
+            break
+        }
+
+        else if (coins[0]<=money){
+            var qty = coins[1]%money
+            for(j=0, j<=qty;j++;){
+                console.log(qty)
+                apply=change.push(coins)
+            }
+            money -= qty*coins[1]
+
+        }
+        else if (coins[1]<=money){
+            var qty = coins[1]%money
+            for(j=0, j<=qty;j++;){
+                console.log(qty)
+                apply=change.push(coins)
+            }
+            money -= qty*coins[1]
+
+        }
+
+        else if (coins[2]<=money){
+            var qty = coins[1]%money
+            for(j=0, j<=qty;j++;){
+                console.log(qty)
+                apply=change.push(coins)
+            }
+            money -= qty*coins[1]
+
+        }
+
+        else if (coins[3]<=money){
+            var qty = coins[1]%money
+            for(j=0, j<=qty;j++;){
+                console.log(qty)
+                apply=change.push(coins)
+            }
+            money -= qty*coins[1]
+
+        }
+
+        else if (coins[4]<=money){
+            var qty = coins[1]%money
+            for(j=0, j<=qty;j++;){
+                console.log(qty)
+                apply=change.push(coins)
+            }
+            money -= qty*coins[1]
+
+        }
+    }
+
+
 }
-mod_lst.push(value_2)
-console.log(mod_lst)
+
+changegiver(50)
+
+
+
+
+
+// var word = "Good, better, best. Never let it rest. 'Til your good is better and your better is best."
+// var words=word.split("")
+// // var join=words.join("")
+// console.log(join)
+// var count=0
+// for(i in word){
+//     if (word[i].toLowerCase() =='a' || word[i].toLowerCase() =='e' || word[i].toLowerCase() =='i' || word[i].toLowerCase() =='o' || word[i].toLowerCase() =='u'){
+//         count++
+//     }
+// }
+// console.log(count)
+
+
+var value = 'javascript is cool'
+var mod_value=''
+
+var obj={
+    a:4,
+    e:3,
+    i:1,
+    o:0,
+    s:5,
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

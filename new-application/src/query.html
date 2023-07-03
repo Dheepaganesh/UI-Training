@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <title>Query Selector</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0px;
+            font-family: 'Poppins';
+        }
+
+        #start{
+            margin-top: 20%;
+            margin-left:40%;
+            width: 20%;
+            height: 70px;
+            font-size: 23px;
+            border-radius: 7px;
+            background-color: black;
+            color: aliceblue;
+            border: none;
+            cursor: pointer;
+        }
+
+        #count{
+            text-align: center;
+            margin-top: 25%;
+            font-size: 100px;
+            font-weight: 600;
+            color: aliceblue;
+            display: none;
+
+        
+        }
+
+
+        #navbar{
+            margin: 0%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            background-color: black;
+            color: rgba(138, 232, 138,0.5);
+        }
+
+        .bars{
+            margin-right: 15px;
+            margin-left: 15px;
+            padding: 14px;
+        }
+
+        .bars a{
+            text-decoration: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        #para{
+            color: white;
+            margin-top: 1%;
+            font-size: 25px;
+            animation: colorchnage infinite;
+        }
+
+        #head{
+            color: white;
+            margin-top: 20%;
+            font-size: 60px;
+            animation: myani 4s infinite;
+        }
+
+        @keyframes myani{
+            0%{
+                color: aquamarine;
+            }
+
+            20%{
+                color: lightblue;
+            }
+
+            40%{
+                color: bisque;
+            }
+
+            60%{
+                color:lightpink;
+            }
+
+            80%{
+                color: lightgreen;
+            }
+
+            100%{
+                color: aliceblue;
+            }
+        }
+    </style>
+
+   
+</head>
+<body>
+    <div id="container">
+        <nav id="navbar">
+            <div class="bars"><a>Home</a></div>
+            <div class="bars"><a>Trip</a></div>
+            <div class="bars"><a>Plans</a></div>
+        </nav>
+        <center>
+        <h1 id="head">Welcome! User</h1>
+        <p id="para">Enjoy the Journey...</p>
+        </center>
+    </div>
+    <h2 id="count">10</h2>
+</div>
+<button id="start" onclick="startAnimation()">Start Now</button>
+<script>
+    var content = document.getElementById('container');
+    content.style.display = 'none';
+    function startAnimation(){
+
+    var count_ = document.getElementById('count');
+    count_.style.display = 'block';
+    var button = document.getElementById('start');
+    button.style.display = 'none'; 
+    var init = document.getElementById('count').innerHTML;
+    console.log(init)
+
+
+    setInterval(function(){
+        init = init > 0 ? init - 1:0;
+
+        if(init==9 || init==6 || init==3){
+            count.innerHTML=init;
+            var body_image = document.getElementsByTagName('body')[0];
+            body_image.style.backgroundImage = "url('https://c4.wallpaperflare.com/wallpaper/1000/732/59/spring-8k-uhd-8k-asia-wallpaper-preview.jpg')";
+            body_image.style.backgroundSize = '1440px 900px'
+            body_image.style.backgroundRepeat = 'no-repeat'
+            count.innerHTML=init;
+            count.style.fontSize =String((10*init)+'px');
+        }
+
+        else if(init==8 || init==5 || init==2){
+            count.innerHTML=init;
+            var body_image = document.getElementsByTagName('body')[0];
+            body_image.style.backgroundImage = "url('https://c4.wallpaperflare.com/wallpaper/204/711/757/mount-fuji-clouds-trees-sky-wallpaper-preview.jpg')";
+            body_image.style.backgroundSize = '1440px 900px'
+            body_image.style.backgroundRepeat = 'no-repeat'
+            count.innerHTML=init;
+            count.style.fontSize =String((10*init)+'px');
+        }
+
+        else if(init==7 || init==4 || init==1){
+            count.innerHTML=init;
+            var body_image = document.getElementsByTagName('body')[0];
+            body_image.style.backgroundImage = "url('https://c1.wallpaperflare.com/preview/56/864/941/the-sun-phuquoc-island-vietnam.jpg')";
+            body_image.style.backgroundSize = '1440px 900px'
+            body_image.style.backgroundRepeat = 'no-repeat'
+            count.innerHTML=init;
+            count.style.fontSize =String((10*init)+'px');
+        }
+
+        else if(init==0){
+            count.innerHTML=init;
+            var body_image = document.getElementsByTagName('body')[0];
+            body_image.style.background = "url('https://c1.wallpaperflare.com/preview/394/915/596/the-sun-phuquoc-island-vietnam.jpg')";
+            body_image.style.backgroundSize = '1440px 900px'
+            body_image.style.backgroundRepeat = 'no-repeat'
+            count.style.display='none';
+            content.style.display = 'block';
+        }
+
+        else{
+            count.innerHTML=init;
+        }
+        
+
+    },150)
+
+}
+
+    var body_image = document.getElementsByTagName('body')[0];
+    body_image.style.backgroundImage = "url('https://c4.wallpaperflare.com/wallpaper/818/843/579/landscape-of-body-of-water-cover-with-snow-during-dusk-wallpaper-preview.jpg')";
+    body_image.style.backgroundSize = '1440px 900px'
+    body_image.style.backgroundRepeat = 'no-repeat'
+
+    
+
+    var tag_nam = document.getElementsByTagName('p')[0].innerText;
+    // var nav_text = document.getElementsByClassName("nav")[0].innerText;
+    // var para = document.getElementById('para').innerText;
+    console.log(tag_nam)
+</script>
+</body>
+</html> 
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The id Property</h2>
+
+<a id="myAnchor1" href="https://www.w3schools.com/html/">HTML</a>
+<a id="myAnchor2" href="https://www.w3schools.com/css/">CSS</a>
+<a id="myAnchor3" href="https://www.w3schools.com/js/">JavaScript</a>
+
+<p id="para">The value of the id attribute of the first link is:</p>
+<p id="demo"></p>
+
+<script>
+let id = document.getElementById("para").innerText;
+document.getElementById("demo").innerHTML = id;
+console.log(id)
+</script>
+
+</body> -->
+</html>
