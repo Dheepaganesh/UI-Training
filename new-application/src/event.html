@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e9b0afef5d.js" crossorigin="anonymous"></script>
+    <title>Event Handling</title>
+    <link rel="stylesheet" href="event.css">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="head">
+            <div class="bars"><a id="icon" href="#"><i  class="fa-solid fa-list" style="color: #0a0a0a;"></i></a></div>
+            <div class="bars"><a href="#">Increase Font</a></div>
+            <div class="bars"><a id="back" href="#">Background Change</a></div>
+        </nav>
+        <div id="side" class="show">
+            <div>Premium</div>
+            <div>Content</div>
+            <div>Short</div>
+        </div>
+        <div class="session-1">
+            <h1 id="font" >Hi! User</h1>
+            <button id="plusFont">+</button>
+            <button id="default">default</button>
+            <button id="minusFont">-</button>          
+        </div>
+        <div class="session-2">
+            <h3 id="number">619</h3>
+            <button id="increase">Click to Chnage</button>
+
+        </div>
+    </div>
+</body>
+<script>
+    
+    var plus = document.getElementById('plusFont');
+    var minus = document.getElementById('minusFont');
+    var normal = document.getElementById('default');
+    var icon = document.getElementById('icon');
+    var numButton = document.getElementById('increase');
+    var backButtuon = document.getElementById('back');
+    backButtuon.onclick = function(){
+        var body = document.getElementsByTagName('body')[0];
+        body.style.backgroundColor = 'black';
+        body.style.color = 'aliceblue';
+    }
+
+    plus.onclick = function(){
+        var font = document.getElementById('font');
+        if(font.classList.contains('small')){
+            font.classList.remove('small')
+            font.classList.add('big');
+        }
+        else{
+            font.classList.add('big')
+        }
+        }
+    minus.onclick = function(){
+        var font = document.getElementById('font');
+        if(font.classList.contains('big')){
+            font.classList.remove('big')
+            font.classList.add('small')
+        }
+        else{
+            font.classList.add('small')
+        }
+        }
+
+    normal.onclick = function(){
+        var font = document.getElementById('font');
+        
+        if(font.classList.contains('big')){
+            font.classList.remove('big')
+        }
+
+        else if(font.classList.contains('small')){
+            font.classList.remove('small')
+
+        }
+
+    }
+
+    icon.onclick = function (){
+        console.log('Working')
+        var side = document.getElementById('side');
+        if(side.classList.contains('show')){
+            side.classList.remove('show');
+            side.classList.add('hide');
+        }
+
+        else if(side.classList.contains('hide')){
+            side.classList.remove('hide')
+            side.classList.add('show');
+        }
+    }
+
+    numButton.onclick = function(){
+        var number_= document.getElementById('number')
+        var element = window.getComputedStyle(number_).fontSize
+        console.log(typeof(element))
+        var ana = Number(element.slice(0,element.length-2))+10
+        number.style.fontSize = ana +'px'
+    }
+
+
+
+</script>
+</html>

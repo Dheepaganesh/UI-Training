@@ -1,0 +1,60 @@
+*{
+    margin: 0%;
+    padding: 0px;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: darkcyan;
+    padding: 10px;
+}
+.bars{
+    margin-right: 1.5%;
+}
+
+.bars a{
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+}
+
+.big{
+    font-size: 64px;
+    color: black;
+}
+
+.small{
+    font-size: 12px;
+}
+
+.show{
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    width: 5%;
+    height: 70px;
+    display: block;
+    transform: translateX(1px);
+    transition: 5s;
+}
+
+.hide{
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    width: 5%;
+    height: 70px;
+    transform: translateX(-100px);
+    transition: 5s;
+}
+
+#side div{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    cursor: pointer;
+}

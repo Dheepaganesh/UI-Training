@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Event</title>
+    <style>
+        #container{
+            margin-top: 15%;
+        }
+
+        #form{
+            width: 50%;
+            height: 450px;
+            background-color: lightgreen;
+            color: black;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        #form >input:first-of-type{
+            margin-top: 20%;
+            margin-bottom: 2%;
+        }
+
+        #form >input:last-of-type{
+            width: 30%;
+            height: 48px;
+        }
+
+        #form >input{
+            width: 40%;
+            height: 30px;
+            margin: 0 auto;
+            margin-bottom: 2%;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+        }
+
+        ::placeholder{
+            text-align: center;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div id="container">
+        <center>
+        <form action="" id="form">
+            <input id="usr" type="text" placeholder="Enter Name" >
+            <input type="password" placeholder="Enter Password">
+            <input id="submit" type="submit" value="Login Now">
+        </form>
+        </center>
+    </div>
+</body>
+<script>
+    var usrname = document.getElementById('usr');
+
+    usrname.addEventListener('focus',function(){
+        usrname.style.backgroundColor = 'rgba(0,0,0,0.5)'
+    })
+    
+    usrname.addEventListener('blur',function(){
+        usrname.style.backgroundColor = 'rgba(255,255,255,0.3)'
+    })
+
+    usrname.addEventListener('input',function(e){
+        var nam = e.target.value;
+
+        console.log(nam.toUpperCase())
+    })
+    
+</script>
+</html>
