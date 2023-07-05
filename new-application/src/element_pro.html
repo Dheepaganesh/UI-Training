@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/e9b0afef5d.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Project 2</title>
+    <style>
+        .work{
+            color: white;
+            background-color: black;
+            width: 120px;
+            height: 60px;
+            margin-top: 5px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #newText{
+            width: 50%;
+            height: 50px;
+        }
+
+
+
+        .element{
+            list-style-type: none;
+            width: 17%;
+            height: 50px;
+            background-color: whitesmoke;
+            color: black;
+            margin-bottom: 3%;
+            text-align: center;
+            padding-top: 12px;
+            font-size: 18px;
+            font-weight: 900;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 2%;
+
+        }
+
+        .element:hover{
+            animation: myani 10s infinite;
+        }
+
+        
+
+        .fa-trash{
+            margin-right: 5%;
+            cursor: pointer;
+        }
+
+
+        
+        @keyframes myani{
+            0%{
+                background:red;
+                border-radius: 2px;
+            }
+
+            50%{
+                background: lightgreen;
+                border-radius: 4px;
+            }
+
+            100%{
+                background: orange;
+                border-radius: 6px;
+            }}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="newText" required>
+        <button id="work1" class="work"> Add Element</button>
+        <button id="work2" class="work"> Update First Element</button>
+        <button id="work3" class="work"> Delete First Element</button>
+    </div>
+    <ul class="list">
+  
+    </ul>
+    
+
+</body>
+<script>
+
+
+    $(document).ready(function(){
+        $('i').click(function(){
+            var value =this.parentElement
+            console.log(value)
+            value.remove(value)
+
+        })
+    })
+
+
+    
+//    function iconClick(element){
+//         element.remove();
+//    }
+    
+    work1.onclick = function(){
+        var val = document.getElementById('newText');
+        val.value=val.value.trim()
+        if (val.value !== ''){
+            var list = document.getElementsByClassName('list')[0];
+            var newList = document.createElement('li');
+            newList.innerHTML= val.value
+            var iconBtn =document.createElement('BUTTON')
+            var img =document.createElement('IMG')
+            iconBtn.className='btn-delete'
+            img.src="./images.png"
+            img.width=10
+            img.height=10
+            iconBtn.appendChild(img);
+            newList.appendChild(iconBtn);
+            list.appendChild(newList);
+
+            iconBtn.addEventListener('click',function(event){
+                event.target.parentElement.remove()
+            })
+        }
+        else{
+            swal('Error','Please! Filll the Required Field','error');
+
+        }
+    }
+
+    work3.onclick = function(){
+        var list = document.getElementsByClassName('list')[0];
+        var element = document.getElementsByClassName('element')[0];
+        list.removeChild(element)
+        
+    }
+
+
+    work2.onclick = function(){
+        var val = document.getElementById('newText');
+        val.value=val.value.trim()
+        if (val.value!== ''){
+            var list = document.getElementsByClassName('list')[0];
+            var element =list.firstElementChild
+            element.innerHTML = val.value
+            var iconBtn =document.createElement('BUTTON')
+            var img =document.createElement('IMG')
+         
+            img.src="./images.png"
+            img.width=10
+            img.height=10
+            iconBtn.appendChild(img);
+            element.appendChild(iconBtn);
+        }
+        else{
+            swal('Error','Please! Filll the Required Field','error');
+
+        }
+    }
+
+    
+
+</script>
+</html>
