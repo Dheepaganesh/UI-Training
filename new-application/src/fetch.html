@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <title>Fetch app</title>
+</head>
+<style>
+    .content{
+        background-color: aqua;
+    }
+    .card{
+        width: 20%;
+        height: 250px;
+        border:  1px solid black ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card .image{
+        width: 60px;
+        height: 60px;
+        border-radius: 32px;
+    }
+    .card .buy{
+        width: 40%;
+        height: 60px;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div id="header">
+            <div class="nav">Home</div>
+            <div class="nav">Help</div>
+            <div class="nav">About</div>
+        </div>
+        <form action="">
+            <input type="text" name="" id="name" >
+            <input type="email" name="" id="mail" >
+            <input type="button" value="" class="btn">
+        </form>
+        <div id="main">
+            <table id="dtable">
+                <tr id="heading">
+                    <td class="head-val"></td>
+                    <td class="head-val"></td>
+                    <td class="head-val"></td>
+                </tr>
+                
+            </table>
+        </div>
+        <div id="content">
+            <div class="card"><img src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg" alt="" class="image"><p class="title">Product</p> <h3 class="price">95</h3><button class="buy">Buy Now</button></div>
+        </div>
+    </div>
+    <script>
+        var table = document.getElementById('dtable')
+        var content = document.getElementById('content')
+        fetch('https://fakestoreapi.com/products/').then(res=>res.json())
+        .then(val=>{
+            val.forEach(element => {
+                var newdata = '<div class="card"><img src="'+ element?.image+'" class="image">'
+                content.innerHTML += newdata;
+            });
+                }).catch(err=>console.log(err))
+        
+    </script>
+</body>
+</html>

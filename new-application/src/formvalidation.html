@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<style>
+    body{
+        animation: inputani 6s infinite;
+    }
+    #usr-error{
+        display: none;
+        color: red;
+        letter-spacing: 1.5;
+    }
+
+    #usrname{
+        width: 40%;
+        height: 30px;
+        margin: 0% auto;
+        margin-top: 20%;
+        margin-bottom: 1%;
+        border: none;
+        outline: none;
+        text-align: center;
+    }
+
+    #form{
+        border-radius: 12px;
+        animation: formani 12s infinite;
+    }
+
+
+
+    #password{
+        width: 40%;
+        height: 30px;
+        margin: 0% auto;
+        margin-bottom: 1%;
+        border: none;
+        outline: none;
+    }
+
+    #button{
+        width: 38%;
+        height: 35px;
+        margin: 0% auto;
+        margin-top: 1%;
+        background-color: black;
+        color: whitesmoke;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+
+    ::placeholder{
+        text-align: center;
+    }
+    @keyframes inputani{
+        0%{
+            background-color: lightcyan;
+            font-weight: 500;
+        }
+        25%{
+            background-color: gainsboro;
+            font-weight: 500;
+        }
+        50%{
+            background-color: lightpink;
+            font-weight: 500;
+
+        }
+        75%{
+            background-color: lavenderblush;
+        }
+
+        100%{
+            background-color: aquamarine;
+        }
+
+    }
+    form{
+       display: flex;
+       flex-direction: column;
+       margin: 0% auto;
+       margin-top: 12%;
+       width: 50%;
+       height: 500px;
+       background-color: aquamarine;
+       text-align: center;
+
+    } 
+
+    #pass-error{
+        display: none;
+        color: red;
+        padding: 0px;
+        margin: 0%;
+    }
+
+    @media screen and (max-width:617px){
+        form{
+            display: flex;
+            flex-direction: column;
+            margin: 0% auto;
+            margin-top: 3%;
+            width: 50%;
+            height: 300px;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        
+    }
+</style>
+<body>
+    <form action="" id="form">
+        <input type="text" id="usrname" placeholder="Enter Username">
+        <p id="usr-error">Please Enter the Valid username.</p>
+        <input type="password" id="password" placeholder="Enter Password">
+        <p id="pass-error">Please enter the Valid password</p>
+        <input id="button" type="button" value="Login">
+
+    </form>
+    <script>
+        var form = document.getElementById('form');
+        var err = document.getElementById('usr-error');
+        var err1 = document.getElementById('pass-error');
+        var username = document.getElementById('usrname');
+        var password = document.getElementById('password');
+        var submitButton = document.getElementById('button');
+
+
+        form.onsubmit = function(event){
+                form.submit()
+
+        }
+        // username.onkeydown = function(){
+        //     var pattern = /^[\w]{5,8}$/
+        //     var result =pattern.test(this.value);
+        //     if(result){
+        //         err.style.display = 'none';
+        //         submitButton.addEventListener('click',function(){                
+        //         })
+
+        //     }
+        //     else{
+        //         err.style.display = 'block';
+
+        //     }
+        // }
+
+        // password.onkeydown = function(){
+        //     var pattern1 = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/
+        //     var result1 = pattern1.test(this.value);
+        //     if(result1){
+        //         err1.style.display = 'none';
+        //         submitButton.addEventListener('click',function(){
+        //         })
+        //     }
+        //     else{
+        //         err1.style.display = 'block';
+        //     }
+        // }
+
+        // submitButton.addEventListener('click',function(){
+        //     var pattern = /^[\w]{5,8}$/
+        //     var result =pattern.test(username.value);
+        //     var pattern1 = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/
+        //     var result1 = pattern1.test(password.value);
+        //     if(result == true && result1 == true){
+        //         confirm('Do you want to submit?')
+        //         form.submit()
+        //     }
+        // })        
+    </script>
+</body>
+</html>

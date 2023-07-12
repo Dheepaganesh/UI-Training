@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e9b0afef5d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Gmail</title>
+    <style>
+
+        body{
+            font-family: 'Poppins';
+        }
+        *{
+            margin: 0%;
+            padding: 0px;
+        }
+
+        .container{
+            display: grid;
+            grid-template-rows: auto auto auto auto;
+            grid-template-columns: auto auto auto;
+            grid-template-areas: 
+            'sidehead front front'
+            'sidehead subfront subfront'
+            'sidehead main main'
+            'sidehead table table'
+            ;
+        } 
+        .head{
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background-color: rgb(245,248,252);
+            grid-area: sidehead;
+        }
+
+        .head div h2{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        #sidenav{
+            grid-area: front;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: rgb(245,248,252);
+        }
+
+        #sidenav div:first-of-type{
+            margin-left: 8%;
+        }
+
+        #sidenav1{
+            margin-top: 1%;
+            grid-area: subfront;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+
+        .sub-front{
+            display: flex;
+            margin-left: 1%;
+        }
+
+        .sub-front div{
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+
+        #main{
+            grid-area: main;
+            margin-top: 1%;
+            margin-bottom: 1%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around ;
+            background-color: rgb(255,255,255);
+            border-radius: 23px;
+        }
+
+        #main a{
+            color: #111213;
+            font-size: 17px;
+        }
+        
+        #main a span{
+            font-size: 16px;
+        }
+
+        #search{
+            width: 25%;
+        }
+
+        .head #logo{
+            margin-bottom: 40px;
+        }
+        #btn{
+            width: 90%;
+            height: 42px;
+            margin-bottom: 30px;
+            background-color: rgb(193,231,254);
+            border: none;
+            border-radius: 5px;
+        }
+        #table1{
+            width: 99%;
+            border: 3px solid rgba(245, 245, 245,0.7);
+            border-collapse: collapse;
+            grid-area: table;
+            /* margin: 0% auto; */
+            margin-left: 1%;
+            background-color:  rgba(255, 255,255, 1);
+
+
+        }
+
+        #table1 tr:hover{
+            background-color: rgba(245, 245, 245,0.7);
+        }
+
+        #table2{
+            width: 100%;
+            border: 3px solid rgba(245, 245, 245,0.01);
+            border-collapse: collapse;
+            background-color: rgba(255, 255,255, 1);
+            margin-left: 1%;
+            display: none;
+            grid-area: table;
+
+        }
+
+        #table2 tr:hover{
+            background-color: rgba(245, 245, 245,0.7);
+        }
+
+        #table2 td{
+            border: 3px solid whitesmoke;
+            padding: 5px;
+            border-left: none;
+            border-right: none ;
+
+        }
+
+
+        #table3{
+            width: 100%;
+            border: 3px solid whitesmoke;
+            border-collapse: collapse;
+            background-color: rgba(255, 255,255, 1);
+            margin-left: 1%;
+            display: none;
+            grid-area: table;
+
+        }
+
+        #table3 tr:hover{
+            background-color: rgba(245, 245, 245,0.7);
+        }
+
+        #table3 td{
+            border: 3px solid whitesmoke;
+            padding: 5px;
+            border-left: none;
+            border-right: none ;
+
+        }
+
+
+        #table1 td{
+            border: 3px solid whitesmoke;
+            padding: 5px;
+            border-left: none;
+            border-right: none;
+
+        }
+        .edt-btn{
+            background-color: #defbff;
+            color: black;
+            outline: none;
+            border: none;
+            width: 110px;
+            height: 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .del-btn{
+            background-color: #c7a974;
+            color: black;
+            outline: none;
+            border: none;
+            width: 110px;
+            height: 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        
+
+        #hideForm1{
+            display: none;
+            width: 60%;
+            height: 450px;
+            margin-left: 3%;
+            display: none;
+            grid-area: table;
+
+        }
+
+        #hideForm2{
+            display: none;
+            width: 60%;
+            height: 450px;
+            margin-left: 3%;
+            display: none;
+            grid-area: table;
+
+        }
+
+        #hideForm3{
+            display: none;
+            width: 60%;
+            height: 450px;
+            margin-left: 3%;
+            display: none;
+            grid-area: table;
+
+        }
+        
+        
+        .head-bars{
+            text-decoration: none;
+            margin-left: 14px;
+        }
+
+        .bars{
+            display: flex;
+            margin: 10px;
+        }
+
+        .bars i,.bars span{
+            font-size: 20px;
+        }
+
+        .bars  p{
+            font-size: .875rem;
+            padding-left: 8px;
+        }
+
+        #search{
+            border-radius: 23px 0px 0px 23px;
+            border: 1px solid whitesmoke;
+            background-color: rgba(234, 241, 251, 1);
+            border-right: none;
+            padding-top: 2px;
+            width: 10%;
+            height: 53px;
+        }
+
+        #button1{
+            background-color: rgba(234, 241, 251, 1);
+            border: 1px solid whitesmoke;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            width: 10%;
+            height: 53px;
+        }
+
+        #button2{
+            border-radius: 0px 21px 21px 0px;
+            background-color: rgba(234, 241, 251, 1);
+            border: 1px solid whitesmoke;
+            border-left: none;
+            padding-right: 2px;
+        }
+
+        #input{
+            width: 68%;
+            height: 49px;
+            border: 1px solid whitesmoke;
+            background-color: rgba(234, 241, 251, 1);
+            border-left: none;
+            border-right: none;
+            outline: none;
+        }
+
+        #sidenav{
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1%;
+
+        }
+        .front-bar{
+            width: 40%;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            margin-top: 0.5%;
+            margin-bottom: 0.5%;
+        }
+
+        .front-bar1{
+            width: 40%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .front-bar1 div:first-of-type{
+            margin-left: 110px;
+            margin-right: 20px;
+        }
+
+        .front-bar1 div{
+            margin-left: 20px;
+            margin-right: 30px;
+        }
+        .front-bar1 div:last-of-type{
+            margin-left: 60px;
+        }
+
+        .head div{
+            font-size: 20px;
+        }
+        #logo img{
+            margin-top: 3%;
+        }
+
+        #post{
+            text-decoration: underline;
+            color: #D3E2FD;
+        }
+
+        #composeForm{
+            grid-area: table;
+            display: none;
+            width: 60%;
+            height: 450px;
+            display: none;
+            grid-area: table;
+            margin-left: 2%;
+        }
+
+        td:nth-of-type(2){
+            font-size: 14px;
+        }
+        
+        td:nth-of-type(3){
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <div id="logo"><img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r5.png" alt="Mail" width="105px" height="40px"></div>
+            <div><button id="btn"><i class="fa-solid fa-pencil" style="color: #151619;"></i><p>Compose</p></button></div>
+            <div class="bars"><i class="fa-sharp fa-solid fa-inbox" style="color: #151619;"></i> <p>Index</p></div>
+            <div class="bars"><i class="fa-regular fa-star" style="color: #111213;"></i> <p>Stared</p></div>
+            <div class="bars"><span class="material-symbols-outlined icons">snooze</span> <p>Snoozed</p></div>
+            <div class="bars"><span class="material-symbols-outlined icons">send</span> <p>Sent</p></div>
+            <div class="bars"><span class="material-symbols-outlined icons">description</span> <p>Drafts</p></div>
+            <div class="bars"><span class="material-symbols-outlined icons">stacked_email</span> <p>All Mail</p></div>
+            <div class="bars"><span class="material-symbols-outlined icons">error</span> <p>Spam</p></div>
+            <div class="bars"><span class="material-symbols-outlined icons">delete</span> <p>Trash</p></div>
+            <div class="bars"><span class="material-symbols-outlined icons">expand_more</span> <p>More</p></div>
+            <div><h2>Labels</h2></div>
+            <div class="bars" style="font-size: .873rem;">Notes</div>
+        </div>
+        <div id="sidenav">
+            <div class="front-bar">
+                <button id="search"><span class="material-symbols-outlined">search</span></button>
+                <input type="text" placeholder="Search Mail" id="input" >
+                <button id="button1"><span class="material-symbols-outlined">tune</span></button>
+                <button id="button2"><i class="fa fa-circle" style="color: green;"></i>Active</button>
+            </div>
+            <div class="front-bar1">
+                <div><span class="material-symbols-outlined">help</span></div>
+                <div ><span class="material-symbols-outlined">settings</span></div>
+            <div ><span class="material-symbols-outlined">more_vert</span></div>
+            <div><img src="https://try.experience.com/wp-content/uploads/2021/01/Experience-com-logo-onecolor.png" alt="" width="170px" height="24px"></div>
+            </div>
+            
+        </div>
+        <div id="sidenav1">
+            <div class="sub-front">
+            <div><span class="material-symbols-outlined">check_box_outline_blank</span></div>
+            <div><span class="material-symbols-outlined">refresh</span></div>
+            <div><span class="material-symbols-outlined">more_vert</span></div>
+            </div>
+            <div class="sub-front">
+            <div><span class="material-symbols-outlined">arrow_back_ios</span></div>
+            <div><span class="material-symbols-outlined">arrow_forward_ios</span></div>
+            <div><span class="material-symbols-outlined">list_alt</span></div>
+            </div>
+        </div>
+        <div id="main">
+            <a href="#" class="head-bars" id="post"><span class="material-symbols-outlined">inbox</span>Post</a>
+            <a href="#" class="head-bars" id="todo"><span class="material-symbols-outlined">sell</span>ToDoList</a>
+            <a href="#" class="head-bars" id="user"><span class="material-symbols-outlined">group</span>Users</a>
+        </div>
+        <table id="table1">
+            <!-- <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                </tr>
+            </thead> -->
+            <tbody id="datatb">
+    
+            </tbody>
+        </table>
+    
+        <form action="" id="hideForm1">
+            <input type="number" placeholder="enter new id" id="newid" min="0" required>
+            <input type="text" placeholder="enter new title" id="newtitle" minlength="15" maxlength="70" required>
+            <input type="text" placeholder="enter new body" id="newbody" minlength="20" maxlength="150" required>
+            <input type="submit" value="Edit">
+        </form>
+
+        <form action="" id="hideForm2">
+            <input type="number" placeholder="enter new id" id="id1" min="0" required>
+            <input type="text" placeholder="enter new title" id="title1" minlength="15" maxlength="70" required>
+            <input type="text" placeholder="enter new body" id="completed" minlength="20" maxlength="150" required>
+            <input type="submit" value="Edit">
+        </form>
+
+        <form action="" id="hideForm3">
+            <input type="number" placeholder="enter new id" id="id2" min="0" required>
+            <input type="text" placeholder="enter new title" id="title2" minlength="15" maxlength="70" required>
+            <input type="text" placeholder="enter new body" id="mycompany" minlength="20" maxlength="150" required>
+            <input type="submit" value="Edit">
+        </form>
+
+        <form action="" id="composeForm" style="display: none;">
+            <input type="number" placeholder="enter new id" id="postid" min="0" required>
+            <input type="text" placeholder="enter new title" id="posttitle" minlength="15" maxlength="70" required>
+            <input type="text" placeholder="enter new body" id="postbody" minlength="20" maxlength="150" required>
+            <input type="submit" value="Post">
+        </form>
+    
+        <table id="table2">
+            <tbody id="dtable1"></tbody>
+        </table>
+    
+        <table id="table3">
+            <tbody id="dtable2"></tbody>
+        </table>
+    </div>
+    
+
+    <script>
+        var arr =[]
+        var arr1=[]
+        var arr2=[]
+        var tableBody = document.getElementById('datatb');
+        var form1 = document.getElementById('hideForm1');
+        var form2 = document.getElementById('hideForm2');
+        var form3 = document.getElementById('hideForm3');
+
+
+
+
+        var tableBody1 = document.getElementById('dtable1');
+        
+        var tableBody2 = document.getElementById('dtable2');
+
+        var table =document.getElementById('table1')
+        var table1 =document.getElementById('table2')
+        var table2 =document.getElementById('table3')
+
+        var post = document.getElementById('post');
+        var todo = document.getElementById('todo');
+        var user = document.getElementById('user');
+
+
+        post.onclick = function() {
+            table1.style.display = 'none';
+            table2.style.display = 'none';
+            form1.style.display = 'none';
+            form2.style.display = 'none';
+            form3.style.display = 'none';
+            composeForm.style.display = 'none';
+            table.style.display = 'block';
+            // tableBody.style.display = 'n'
+        // table.style.display = 'block';
+        // table1.style.display = 'none';
+        // table2.style.display = 'none';
+        // form1.style.display = 'none';
+        // form2.style.display = 'none';
+        // form3.style.display = 'none';
+        // composeForm.style.display = 'none';
+        // this.style.textDecoration = 'underline';
+        // this.style.color = '#D3E2F';
+        // form1.style.display = 'none';
+        // form2.style.display = 'none';
+        // form3.style.display = 'none';
+        }
+
+        todo.onclick=function(){
+        table.style.display = 'none';
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+        table.style.display ='none';
+        form1.style.display = 'none';
+        form2.style.display = 'none';
+        form3.style.display = 'none';
+        composeForm.style.display ='none';
+        this.style.textDecoration = 'underline';
+        this.style.color = '#D3E2F';
+        }
+
+        user.onclick = function() {
+        table.style.display = 'none';
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+        form1.style.display = 'none';
+        form2.style.display = 'none';
+        form3.style.display = 'none';
+        composeForm.style.display = 'none';
+        this.style.textDecoration = 'underline';
+        this.style.color = '#D3E2F';
+        form1.style.display = 'none';
+        form2.style.display = 'none';
+        }
+
+        
+        var compose = document.getElementById('btn');
+        var composeForm = document.getElementById('composeForm');
+        compose.onclick = function(){
+            composeForm.style.display = 'block';
+            table.style.display = 'none';
+            table1.style.display = 'none';
+            table2.style.display = 'none';
+            composeForm.addEventListener('submit',function(e){
+                e.preventDefault()
+                var pid=document.getElementById('postid').value;
+                var ptitle = document.getElementById('posttitle').value;
+                var pbody = document.getElementById('postbody').value;
+                
+                var obj={
+                    "id":pid,
+                    "title":ptitle,
+                    "body":pbody,
+                }
+                fetch('https://jsonplaceholder.typicode.com/posts',{
+                    method:'POST',
+                    headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(obj)
+            }).then(function(e){
+                if(!e.status==200){
+                    throw 'Error'
+                }
+                else{
+                    return e.json()
+                }
+            }).then(function(data){
+                if(data){
+                    console.log('Success')
+                    alert('Pushed SuccessFully')
+                    composeForm.style.display ='none';
+                    table.style.display = 'block';
+                    table1.style.display = 'none';
+                    table2.style.display = 'none';
+                    arr[0].push(obj)
+
+                }
+
+                })
+
+            })
+        }
+
+        
+
+        fetch('https://jsonplaceholder.typicode.com/todos').then(function(e){return e.json()
+        }).then(function(data){
+            console.log(data)
+            arr1.push(data)
+            console.log(arr)
+            data.forEach(function(val){
+                var new_data = '<tr><td class="id1">'+ val?.id +'</td><td class="title1">'+ val?.title +'</td><td class="completed">'+ val?.completed +'</td><td><button class="edt-btn" onclick="editval1(event)">Edit</button></td><td><button class="del-btn" onclick="delval1(event)">Delete</button></td></tr>'
+                tableBody1.innerHTML+=new_data
+            })
+
+        })
+
+        fetch('https://jsonplaceholder.typicode.com/users').then(function(e){return e.json()
+        }).then(function(data){
+            console.log(data)
+            arr2.push(data)
+            console.log(arr)
+            data.forEach(function(val){
+                var new_data = '<tr id="' + val?.id +'"><td class="id2">'+ val?.id +'</td><td class="name">'+ val?.name +'</td><td class="company">'+ val?.company?.name +'</td><td><button class="edt-btn" onclick="editval2(event)">Edit</button></td><td><button class="del-btn" onclick="delval2(event)">Delete</button></td></tr>'
+                tableBody2.innerHTML+=new_data
+            })
+
+        })
+
+        
+
+        fetch('https://jsonplaceholder.typicode.com/posts').then(function(e){return e.json()
+        }).then(function(data){
+            console.log(data)
+            arr.push(data)
+            console.log(arr)
+            data.forEach(function(val){
+                var new_data = '<tr><td class="id">'+ val.id +'</td><td class="title">'+ val.title +'</td><td class="body">'+ val.body +'</td><td><button class="edt-btn" onclick="editval(event)">Edit</button></td><td><button class="del-btn" onclick="delval(event)">Delete</button></td></tr>'
+                tableBody.innerHTML+=new_data
+            })
+
+        })
+
+
+
+        function delval(e){
+            var row = e.target.closest('tr');
+            var ids = row.querySelector('.id');        
+            fetch('https://jsonplaceholder.typicode.com/posts/'+ids.innerHTML,{
+                method:'DELETE'
+            }).then(function(e){
+                if(e.status !== 200){
+                        throw 'Error'
+                        console.log('error')
+                    }
+                else{
+                    return e.json()
+                }                
+            }).then(function(data){
+                if(data){
+                    alert('Deleted Successfully')
+                    row.remove()
+                    arr[0].splice(ids.innerHTML-1,1)
+                    console.log(arr)
+                }
+            })
+            
+        }
+
+        function delval1(e){
+            var row = e.target.closest('tr');
+            var ids = row.querySelector('.id1');        
+            fetch('https://jsonplaceholder.typicode.com/posts/'+ids.innerHTML,{
+                method:'DELETE'
+            }).then(function(e){
+                if(e.status !== 200){
+                        throw 'Error'
+                        console.log('error')
+                    }
+                else{
+                    return e.json()
+                }                
+            }).then(function(data){
+                if(data){
+                    alert('Deleted Successfully')
+                    row.remove()
+                    arr1[0].splice(ids.innerHTML-1,1)
+                    console.log(arr1)
+                }
+            })
+            
+        }
+
+        function delval2(e){
+            var row = e.target.closest('tr');
+            var ids = row.querySelector('.id2');        
+            fetch('https://jsonplaceholder.typicode.com/posts/'+ids.innerHTML,{
+                method:'DELETE'
+            }).then(function(e){
+                if(e.status !== 200){
+                        throw 'Error'
+                        console.log('error')
+                    }
+                else{
+                    return e.json()
+                }                
+            }).then(function(data){
+                if(data){
+                    alert('Deleted Successfully')
+                    row.remove()
+                    arr2[0].splice(ids.innerHTML-1,1)
+                    console.log(arr2)
+                }
+            })
+            
+        }
+
+        function editval(e){
+            var row = e.target.closest('tr');
+            var ids = row.querySelector('.id');
+            var title = row.querySelector('.title');
+            var body = row.querySelector('.body');
+            console.log(row)
+            composeForm.style.display = 'none';
+            table.style.display = 'none';
+            table1.style.display = 'none';
+            table2.style.display = 'none';
+            form1.style.display = 'block';
+            form1.onsubmit = function(e){
+                e.preventDefault()
+                var newid = document.getElementById('newid').value
+                var newtitle = document.getElementById('newtitle').value
+                var newbody = document.getElementById('newbody').value
+
+
+            var update_obj ={
+                "id":newid,
+                "title":newtitle,
+                "body":newbody
+            }
+            fetch("https://jsonplaceholder.typicode.com/posts/"+ids.innerHTML,{
+                method:'PUT',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(update_obj)
+            }).then(function(e){
+                if(!e.status==200){
+                    throw 'Error'
+                }
+                else{
+                    return e.json()
+                }
+            }).then(function(data){
+                if(data){
+                    ids.innerHTML = '<td class="id">' + newid + '</td>';
+                    title.innerHTML = '<td class="title">' + newtitle + '</td>';
+                    body.innerHTML = '<td class="body">' + newbody + '</td>';
+                    alert('Updated Successfully')
+                    form1.style.display = 'none';
+                    form2.style.display = 'none';
+                    form3.style.display = 'none';
+                    tableBody.style.display = 'block';
+                    composeForm.style.display = 'none';
+                    table.style.display = 'block';
+                    table1.style.display = 'none';
+                    table2.style.display = 'none';
+                    
+                }
+                else{
+
+                }
+            })
+
+        }
+        }
+
+        function editval1(e){
+            var row = e.target.closest('tr');
+            var ids1 = row.querySelector('.id1');
+            var title1 = row.querySelector('.title1');
+            var completed = row.querySelector('.completed');
+            form2.style.display = 'block';
+            composeForm.style.display = 'none';
+            table.style.display = 'none';
+            table1.style.display = 'none';
+            table2.style.display = 'none';
+            form2.onsubmit = function(e){
+                e.preventDefault()
+                var newid1 = document.getElementById('id1').value
+                var newtitle1 = document.getElementById('title1').value
+                var newcompleted = document.getElementById('completed').value
+                console.log(newid,newtitle,newbody)
+
+
+            var update_obj ={
+                "id":newid,
+                "title":newtitle,
+                "completed": completed
+            }
+            
+            fetch("https://jsonplaceholder.typicode.com/posts/"+ids1.innerHTML,{
+                method:'PUT',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(update_obj)
+            }).then(function(e){
+                if(!e.status==200){
+                    throw 'Error'
+                }
+                else{
+                    return e.json()
+                }
+            }).then(function(data){
+                if(data){
+                    console.log('Success')
+                    ids1.innerText =  newid1;
+                    title1.innerText = newtitle1 ;
+                    completed.innerText =  newcompleted ;
+                    form1.style.display = 'none';
+                    form2.style.display = 'none';
+                    form3.style.display = 'none';
+                    table1.style.display = 'block';
+                    composeForm.style.display = 'none';
+                    table.style.display = 'none';
+
+                    
+                }
+                else{
+
+                }
+            })
+        
+
+        }
+        }
+
+
+        function editval2(e){
+            var row = e.target.closest('tr');
+            var ids2 = row.querySelector('.id2');
+            var name_ = row.querySelector('.name');
+            var company = row.querySelector('.company');
+            form1.style.display='none';
+            form2.style.display = 'block';
+            form3.style.display ='none';
+            composeForm.style.display = 'none';
+            table.style.display = 'none';
+            table1.style.display = 'none';
+            table2.style.display = 'none';
+            form2.onsubmit = function(e){
+                e.preventDefault()
+                var newid2 = document.getElementById('id2').value
+                var newname = document.getElementById('title2').value
+                var newcompany = document.getElementById('mycompany').value
+                console.log(newid,newtitle,newbody)
+
+
+            var obj2 ={
+                "id":newid2,
+                "title":newname,
+                "completed": newcompany
+            }
+
+            console.log(obj2)
+            
+            fetch("https://jsonplaceholder.typicode.com/posts/"+ids2.innerHTML,{
+                method:'PUT',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(obj2)
+            }).then(function(e){
+                if(!e.status==200){
+                    throw 'Error'
+                }
+                else{
+                    return e.json()
+                }
+            }).then(function(data){
+                if(data){
+                    console.log('Success')
+                    ids2.innerText =  newid2;
+                    name_.innerText = newname ;
+                    company.innerText =  newcompany ;
+                    form1.style.display ='none';
+                    form2.style.display ='none';
+                    form3.style.display = 'none';
+                    table1.style.display = 'block';
+                    composeForm.style.display = 'none';
+                    table.style.display = 'none';
+
+                    
+                }
+            })
+        
+
+        }
+        }
+
+        
+    </script>
+</body>
+</html>

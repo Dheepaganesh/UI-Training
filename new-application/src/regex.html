@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+<body>
+    <p id="para">
+        dheepaganesh@gmail.com
+    </p>
+    <script>
+        var paragraph = document.getElementById('para');
+        var string = paragraph.innerHTML;
+        paragraph.style.color = 'lightgreen'
+        var reg = /[a-z]{12,40}@[a-z]{2,6}.[a-z]{3}/gi
+        console.log(string.match(reg))
+
+        var card = '2345-3210-1542'
+        var pattern = /[0-9]{0,4}-[0-9]{6,}/
+        console.log(card.match(pattern),'It working')
+    </script>
+</body>
+</html>

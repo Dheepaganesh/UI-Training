@@ -29,13 +29,88 @@
 
 </body>
 <script>
-    var text_ = document.getElementById('val');
-    var val1 = document.getElementById('item1');
+    // var s1={
+    //     "name":"deepak",
+    //     "age":21,
+    //     'id':21
+    // }
 
-    val1.onclick = function(){
-        var audio =new Audio('');
-        audio.src = ''
-    }
-    
+    // fetch('https://jsonplaceholder.typicode.com/users/1',
+    // {
+    //     method:"PUT",
+    //     headers:{
+    //     'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(s1)
+    // }).then(function(response){
+    //     if(!response.ok){
+    //         console.log('error')
+    //     }
+    //     return response.json()
+    //     })
+    //     .then(function(err){
+    //     if(err){
+    //         console.log(err)
+    //         console.log('Success')
+    //     }
+    //     else{
+    //         console.log('Success but empty')
+    //     }
+    //     })
+
+    fetch('https://jsonplaceholder.typicode.com/users').then(res=>res.json())
+    .then(val=>{
+        var map = new Map();
+        val.forEach(element => {
+            
+        });
+            }).catch(err=>console.log(err))
+
+    // var s1={
+    //     "name":"deepak",
+    //     "age":21,
+    //     'id':21
+    // }
+
+    // fetch('https://jsonplaceholder.typicode.com/users',
+    // {
+    //     method:"POST",
+    //     headers:{
+    //     'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(s1)
+    // }).then(function(response){
+    //     if(!response.ok){
+    //         console.log('error')
+    //     }
+    //     return response.json()
+    //     })
+    //     .then(function(err){
+    //     if(err){
+    //         console.log(err)
+    //         console.log('Success')
+    //     }
+    //     else{
+    //         console.log('Success but empty')
+    //     }
+    //     })
+
+    // fetch('https://jsonplaceholder.typicode.com/users/1',{method:"DELETE"}).then(function(response){
+
+    //     if(!response.ok){
+    //         console.log('error')
+    //     }
+    //     return response.text()
+    // })
+    //     .then(function(val){
+    //     var data = JSON.parse(val)
+    //     if(data){
+    //         console.log(data)
+    //         console.log('Success')
+    //     }
+    //     else{
+    //         console.log('Success but empty')
+    //     }
+    // })
 </script>
 </html>

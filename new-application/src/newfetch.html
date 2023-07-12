@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>New Fetch</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0px;
+        }
+
+        #head{
+            width: 100%;
+            height: 55px;
+            background-color: black;
+            color: darkturquoise;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+        }
+
+        .bars{
+            margin-left: 12px;
+            margin-right: 12px;
+            font-size: 23px;
+            display: flex;
+            align-items: center;
+        }
+
+
+        #dtable{
+            width: 70%;
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin: 0% auto;
+            margin-top: 12px;
+        }
+
+        #dtable tr, #dtable td{
+            border: 2px solid black;
+            padding: 12px;
+            
+        }
+
+        .id{
+            display: none;
+        }
+
+        #image{
+            width: 120px;
+            height: 120px;
+        }
+
+        .edit{
+            background-color: yellow;
+            font-size: 13px;
+            border-radius: 7px;
+            width: 48px;
+            border: none;
+        }
+
+        .del{
+            background-color: rgb(186, 1, 1);
+            font-size: 13px;
+            border-radius: 7px;
+            width: 48px;
+            border: none;
+        }
+
+        #editForm{
+            display: none;
+            margin: 0% auto;
+            margin-top: 10%;
+            width: 400px;
+            height: 400px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav id="head">
+        <div class="bars">Home</div>
+        <div class="bars">Products</div>
+        <div class="bars">Help</div>
+    </nav>
+    <table id="dtable">
+    </table>
+    <form action="" id="editForm">
+        <input type="number" id="editprice" min="300" max="500" required>
+        <input type="submit" value="Edit Price">
+    </form>
+    <script>
+
+        var table=document.getElementById('dtable');
+        let data =[]
+        getProduct()
+        let b
+    
+
+     
+
+            function getProduct(){
+            fetch('https://fakestoreapi.com/products/').then(res=>res.json())
+            .then(val=>{
+                data.push(val)
+                data[0].forEach(value =>{
+                var new_data = '<tr class="row"><td class="id">'+value.id+'</td><td><img id="image" src="'+ value.image+ '"></td><td>'+ value.title + '</td><td class="price">'+ value.price + '</td><td><button class="edit" onclick="editval(event)">Edit</button></td><td><button class="del" onclick="delval(event)">Delete</button></td></tr>';
+                table.innerHTML += new_data
+
+                })
+            })
+            .then(()=>{
+                console.log('data--123',data)
+            })
+            .catch(err=>console.log(err))
+        }
+ 
+        console.log('data--add',getProduct)
+
+
+            function editval(e){
+                    var element = e.target.closest('tr');
+                    var ids = element.querySelector('.price');
+                    var form = document.getElementById('editForm')
+                    form.style.display = 'block';
+                    table.style.display = 'none';
+                    form.addEventListener('submit',function(e){
+                        e.preventDefault()
+                        var newval = document.getElementById('editprice').value;
+                        ids.innerHTML = newval;
+                        form.style.display = 'none';
+                        table.style.display = 'block';
+                    })
+                    console.log(ids)
+
+
+                    
+
+                    // fetch('https://fakestoreapi.com/products/'+ids,{
+                    //     'method':'PULL'
+                    // }).then(function(e){
+                    //     if(!e.ok){
+                    //         throw 'Error'
+                    //     }
+                    //     return e.json()
+                    // }).then(function(event){
+                    //     if(event){
+                    //         console.log(event.response)
+                    //         // getProduct()
+                    //     }
+                    //     else{
+                    //         console.log('Error')
+                    //     }
+                    // })
+                        
+                }
+
+
+
+
+        
+            function delval(e){
+                var element = e.target.closest('tr');
+                var ids = element.querySelector('.id').innerHTML
+                console.log(ids)
+
+                fetch('https://fakestoreapi.com/products/'+ids,{
+                    'method':'DELETE'
+                }).then(function(e){
+                    console.log(typeof(e.status))
+                    if(e.status !== 200){
+                        throw 'Error'
+                    }
+                    
+                    return e.json()
+                }).then(function(event){
+                    if(event){
+                        console.log(event)
+                        data[0].splice(ids-1,1)
+                        element.remove()
+                        console.log(data[0])
+                        
+                    }
+                    else{
+                        console.log('Error')
+                    }
+                })
+                    
+            }
+        
+    </script>
+</body>
+</html>

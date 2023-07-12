@@ -6,6 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
 </head>
+<script>
+    function Hotel(name,no_room,date){
+        this.name = name;
+        this.room = no_room;
+        this.date = date;
+
+       this.details = function(){
+            console.log(this.name,this.room,this.date);
+        }
+    }
+
+    Hotel.prototype.onlyName = function(){
+        console.log('Hi!Deepak')
+    }
+
+
+
+    var value = new Hotel('deepak',3,'13-03-2001')
+    value.onlyName()
+
+    var name_ = 'Deepak';
+    var pattern = /[ABC]{0}[abc]{1,}/
+    console.log(pattern.test(name_))
+    console.log(Hotel)
+</script>
 <body>
     <form action="">
         <input list="data" placeholder="Enter yout Country"><br>

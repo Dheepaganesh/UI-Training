@@ -62,6 +62,10 @@
             cursor: pointer;
         }
 
+        .btn-delete{
+            
+        }
+
 
         
         @keyframes myani{
@@ -126,13 +130,41 @@
             img.src="./images.png"
             img.width=10
             img.height=10
+            var edit = document.createElement('i')
+            edit.className = 'fa-solid';
+            edit.className = 'fa-pen-to-square';
             iconBtn.appendChild(img);
+            newList.className = 'element';
+            newList.appendChild(edit)
             newList.appendChild(iconBtn);
             list.appendChild(newList);
 
-            iconBtn.addEventListener('click',function(event){
-                event.target.parentElement.remove()
+            edit.addEventListener('click',function(e){
+                console.log('hi')
+                var value = e.target.closest('li');
+                var update_value =e.target.closest('li').innerHTML = val.value;
+                var iconBtn =document.createElement('BUTTON')
+                var img =document.createElement('IMG')
+                iconBtn.className='btn-delete'
+                img.src="./images.png"
+                img.width=10
+                img.height=10
+                var edit_ = document.createElement('i')
+                edit_.className = 'fa-solid';
+                edit_.className = 'fa-pen-to-square';
+                iconBtn.appendChild(img);
+                value.appendChild(edit_)
+                value.appendChild(iconBtn);
+            
             })
+
+            iconBtn.addEventListener('click',function(event){
+                var value = event.target.closest('li');
+                value.remove()
+
+            })
+
+            
         }
         else{
             swal('Error','Please! Filll the Required Field','error');
