@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <select name="" onclick="petdis(event)">
+        <option value="1" >HI</option>
+        <option value="2" >B</option>
+        <option value="3">V</option>
+    </select>
+    <img  id="images" src="" alt="">
+    <select name="" id="pets">
+        
+    </select>
+
+
+    </select>
+    <script>
+        // var pets = ["dog", "chicken", "cat", "dog", "chicken", "chicken", "rabbit"];
+        // var lst = document.getElementById("pets"); 
+        // var conv = pets.map(ele => {
+        // var option = document.createElement('option');
+        // option.innerHTML = ele;
+        // lst.appendChild(option);
+        // return option; 
+        // });
+
+        // console.log(conv);
+
+        function petdis(e){
+            
+            console.log(e.target.value)
+
+        }
+
+        
+
+
+        var pets = ["dog", "chicken", "cat", "dog", "chicken", "chicken", "rabbit"];
+        var lst = document.getElementById("pets"); 
+        lst.setAttribute('onclick','petdisplay(event)')    
+        var conv=pets.map(ele=>{
+        var option= document.createElement('option');
+        option.innerHTML=ele;
+        var click ='onclick="petdisplay(event)"'
+        lst.appendChild(option);
+        return option
+        });
+        console.log(conv)
+
+        
+
+        function petdisplay(e){
+            const obj={dog:'https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*',
+        cat:'https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=0.88847xw:1xh;center,top&resize=1200:*',
+        chicken:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI1x5W5KHYmAJ5hI5oQNMbKZ2UloNUbdK1grp2sNHwkQ&s',
+        rabbit:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI1x5W5KHYmAJ5hI5oQNMbKZ2UloNUbdK1grp2sNHwkQ&s'
+    }
+            var img =e.target.value;
+            var imagetag=document.getElementById('images');
+            imagetag.src=obj.img
+
+        }
+
+        
+
+
+    </script>
+</body>
+</html>

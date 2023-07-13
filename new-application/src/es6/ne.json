@@ -1,0 +1,17 @@
+ [{
+    "name":"deepak",
+    "age":21,
+    "work":{
+        "role":"Developer",
+        "exp":1
+    }
+},
+{
+    "name":"kumar",
+    "age":20,
+    "work":{
+        "role":"engineer",
+        "exp":1
+    }
+}
+]
